@@ -102,6 +102,9 @@
                     if (filename.contains(searchString)){
                         System.out.println(filename);
                     }
+                    else{
+                        System.out.println("No se encuentra "+ filename + " en en array");
+                    }
                 }
             }
 }
