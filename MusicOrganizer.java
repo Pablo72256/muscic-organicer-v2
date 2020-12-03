@@ -98,9 +98,28 @@
              * Listar todos los elementos con un String pasado como parametro
             */
             public void listMaching(String searchString){
+                boolean contador = true;
                 for (String filename : files) {
                     if (filename.contains(searchString)){
                         System.out.println(filename);
+                        contador = true;
+                    }
+                    else {
+                        contador = false;
+                    }
+                }
+                if (contador == false) {
+                        System.out.println("No se encuentra "+ searchString + " en en array");
+                }
+            }
+            
+            /**
+             * Reproducir los primeros segundos de una cancion pasado un artista como parametro
+            */
+            public void playSamplesArtist (String searchString) {
+                for (String filename : files) {
+                    if (filename.contains(searchString)){
+                        player.playSample(filename);
                     }
                     else{
                         System.out.println("No se encuentra "+ filename + " en en array");
