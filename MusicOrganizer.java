@@ -33,6 +33,18 @@
             }
             
             /**
+             * Elimina las caciones pasando como parametro un String.
+             */
+            public void deleteSongsWithText(String searchString)
+            {
+                for (String filename : files) {
+                    if (filename.contains(searchString)){
+                        files.remove(filename);
+                    }
+                }
+            }
+            
+            /**
              * Return the number of files in the collection.
              * @return The number of files in the collection.
              */
@@ -98,14 +110,14 @@
              * Listar todos los elementos con un String pasado como parametro
             */
             public void listMaching(String searchString){
-                boolean contador = false;
+                boolean elTextoCoincide = false;
                 for (String filename : files) {
                     if (filename.contains(searchString)){
                         System.out.println(filename);
-                        contador = true;
+                        elTextoCoincide = true;
                     }
                 }
-                if (contador == false) {
+                if (elTextoCoincide == false) {
                     System.out.println("No se encuentra "+ searchString + " en en array");
                 }
             }
