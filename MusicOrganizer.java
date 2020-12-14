@@ -90,8 +90,8 @@
                 int contador = 0;
                 while (contador < files.size()){
                    String filename = files.get(contador);
-                   System.out.println(filename);
                    contador ++;
+                   System.out.println(contador +". " +filename);
                 }
                 
             }
