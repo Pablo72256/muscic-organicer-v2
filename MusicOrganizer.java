@@ -33,18 +33,6 @@
             }
             
             /**
-             * Elimina las caciones pasando como parametro un String.
-             */
-            public void deleteSongsWithText(String searchString)
-            {
-                for (String filename : files) {
-                    if (filename.contains(searchString)){
-                        files.remove(filename);
-                    }
-                }
-            }
-            
-            /**
              * Return the number of files in the collection.
              * @return The number of files in the collection.
              */
@@ -99,11 +87,13 @@
              * Listar todos los elementos de la coleccion.
             */
             public void listAllFiles(){
-                int contador = 1;
-                for (String filename : files) {
-                    System.out.println(contador +"." + filename);
-                    contador += 1;
+                int contador = 0;
+                while (contador < files.size()){
+                   String filename = files.get(contador);
+                   System.out.println(filename);
+                   contador ++;
                 }
+                
             }
             
             /**
