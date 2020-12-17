@@ -135,18 +135,14 @@
                     int resultado = -1;
                     boolean elTextoCoincide = true;
                     while (indice < files.size()){
-                        if (elTextoCoincide){
-                            String filename = files.get(indice);
-                            if (filename.contains(searchString)){
-                                elTextoCoincide = false;
-                                resultado = indice;
-                            }
-                            else{
-                                indice ++;
-                            } 
-                        }
-                        else {
+                        String filename = files.get(indice);
+                        if (filename.contains(searchString)){
+                            elTextoCoincide = false;
+                            resultado = indice;
                             indice = files.size();
+                        }
+                        else{
+                            indice ++;
                         }
                     }
                     return resultado;
