@@ -134,12 +134,11 @@
                     int indice = 0;
                     int resultado = -1;
                     boolean elTextoCoincide = true;
-                    while (indice < files.size()){
+                    while (indice < files.size() && elTextoCoincide){
                         String filename = files.get(indice);
                         if (filename.contains(searchString)){
                             elTextoCoincide = false;
                             resultado = indice;
-                            indice = files.size();
                         }
                         else{
                             indice ++;
