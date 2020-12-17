@@ -132,18 +132,24 @@
                  */
                 public int findFirst(String searchString){
                     int indice = 0;
-                    boolean elTextoCoincide = false;
-                    for (String filename : files) {
+                    int resultado = -1;
+                    boolean elTextoCoincide = true;
+                    while (indice < files.size() && elTextoCoincide){
+                        String filename = files.get(indice);
                         if (filename.contains(searchString)){
-                            elTextoCoincide = true;
+                            elTextoCoincide = false;
                         }
-                        else {
+                        else{
                             indice ++;
                         }
                     }
-                    if (elTextoCoincide == false) {
-                        indice = -1;
+                    
+                    if (elTextoCoincide){
+                        resultado = -1;
                     }
-                    return indice;
+                    else{
+                        resultado = indice;
+                    }
+                    return resultado;
                 }
             }
